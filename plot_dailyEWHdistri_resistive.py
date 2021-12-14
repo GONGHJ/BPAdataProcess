@@ -6,7 +6,9 @@ Grouped by DR control, business day
 # load processed data
 import pyarrow.feather as feather
 import numpy as np
-Summary  = feather.read_feather(r'Summary_dailykWh.feather',use_threads=True, memory_map=True) # the processed daily kWh
+import pandas as pd
+# Summary  = feather.read_feather(r'Summary_dailykWh.feather',use_threads=True, memory_map=True) # the processed daily kWh
+Summary = pd.read_csv('https://raw.githubusercontent.com/GONGHJ/BPAdataProcess/main/Summary_dailykWh.csv', index_col=0)
 # ================= plot daily electricy usage boxplot by season results =====================# ================= plot daily electricity usage by season results =====================
 import matplotlib as mpl
 import matplotlib.pyplot as plt
